@@ -1,0 +1,30 @@
+@import './var.scss' ;
+
+section.header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5em;
+    padding: 0 .8em;
+    h1{
+        color: $Very_Dark_Magenta;
+        font-size: clamp(1.5rem, 1rem + 2vw, 3.5rem);
+    }
+
+    p{
+        color: $Dark_Grayish_Magenta;
+        font-size: clamp(1rem, .8rem + .3vw, 1.5rem);
+    }
+}
+
+@media screen and (min-width: 64em){
+    section.header{
+        text-align: left;
+        max-width: 50%;
+        gap: 1.5em;
+
+        h1{
+            max-width: 50%;
+        }
+    }
+}

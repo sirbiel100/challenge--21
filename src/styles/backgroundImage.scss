@@ -1,0 +1,48 @@
+section.BGImages {
+    img {
+        position: absolute;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        &:first-child { // Top mobile
+            top: 0;
+            left: 0;
+        }
+        &:nth-child(2) { // Bottom mobile
+            bottom: 0;
+            right: 0;
+        }
+        &:nth-child(3) { // Top Desktop
+            display: none;
+        }
+        &:nth-child(4) { // Bottom Desktop
+            display: none;
+        }
+    }
+}
+
+//Laptop and Desktop
+@media screen and (min-width: 64em) {
+    section.BGImages {
+        img {
+            width: auto;
+            &:first-child { // Top mobile
+                display: none;
+            }
+            &:nth-child(2) { // Bottom mobile
+                display: none;
+            }
+            &:nth-child(3) { // Top Desktop
+                display: block;
+                top: 0;
+                left: 0;
+            }
+            &:nth-child(4) { // Bottom Desktop
+                display: block;
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+}

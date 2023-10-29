@@ -1,0 +1,101 @@
+@import "./var.scss";
+
+section.Bottom {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "bottom";
+    gap: 2em;
+    padding: 4em 1em;
+
+    header {
+        grid-area: header;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    bottom {
+        grid-area: bottom;
+    }
+
+    header,
+    main,
+    bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5em;
+        gap: 2em;
+        border-radius: 8px;
+        background-color: $Very_Dark_Magenta;
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 2em;
+            line-height: 1.2;
+            img {
+                max-width: 25%;
+                height: auto;
+                border-radius: 50%;
+            }
+        }
+
+        h1,
+        p {
+            color: $White;
+        }
+
+        p {
+            line-height: 1.4;
+        }
+
+        span {
+            color: $Soft_Pink;
+        }
+    }
+}
+
+@media screen and (min-width: 37.5em) {
+    section.Bottom {
+        grid-template-areas:
+            "header main"
+            "bottom bottom";
+    }
+}
+//Laptop and Desktop
+@media screen and (min-width: 64em) {
+    section.Bottom {
+        justify-content: center;
+        grid-template-areas: "header main bottom";
+
+        header,
+        main,
+        bottom {
+            align-items: flex-start;
+            padding: 2em;
+            max-width: 30em;
+            min-height: 15em;
+
+            .profile {
+                gap: 1.5em;
+            }
+        }
+
+        main,
+        bottom {
+            position: relative;
+        }
+
+        main {
+            top: 10%;
+        }
+
+        bottom {
+            top: 20%;
+        }
+    }
+}
